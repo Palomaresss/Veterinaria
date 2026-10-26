@@ -4,6 +4,7 @@ Ambientes de Programacion Visual
 
 ## Equipo
 Backend: Alejandro Palomares Cesena
+Frontend: Diego Nahum Nunez Garcia
 DBA: Daniel Alexandro Hernandez Melchor
 
 ## Ramas de trabajo
