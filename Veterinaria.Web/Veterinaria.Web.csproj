@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>b914e96f-2bdc-496a-9cad-be6263dc2098</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Veterinaria.Entidades\Veterinaria.Entidades.csproj" />
+    <ProjectReference Include="..\Veterinaria.Negocios\Veterinaria.Negocios.csproj" />
+  </ItemGroup>
+
+</Project>
