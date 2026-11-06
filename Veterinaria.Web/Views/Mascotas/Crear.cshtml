@@ -1,0 +1,40 @@
+﻿@model Veterinaria.Entidades.Mascota
+
+@{
+    ViewData["Title"] = "Registrar Mascota";
+}
+
+<div class="container mt-4">
+    <h2>Registrar Nueva Mascota</h2>
+    <hr />
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-success">@ViewBag.Mensaje</div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Crear">
+                <div class="form-group mb-3">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Especie" class="control-label"></label>
+                    <input asp-for="Especie" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Edad" class="control-label"></label>
+                    <input asp-for="Edad" type="number" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Mascota</button>
+            </form>
+        </div>
+    </div>
+</div>
