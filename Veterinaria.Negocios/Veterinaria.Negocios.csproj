@@ -1,16 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-	<PropertyGroup>
-		<TargetFramework>net10.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<NuGetAudit>false</NuGetAudit>
-		<NoWarn>$(NoWarn);NU1902</NoWarn>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Veterinaria.Datos\Veterinaria.Datos.csproj" />
-		<ProjectReference Include="..\Veterinaria.Entidades\Veterinaria.Entidades.csproj" />
-	</ItemGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Veterinaria.Datos\Veterinaria.Datos.csproj" />
+    <ProjectReference Include="..\Veterinaria.Entidades\Veterinaria.Entidades.csproj" />
+  </ItemGroup>
 
 </Project>

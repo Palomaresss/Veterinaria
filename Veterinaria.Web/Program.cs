@@ -1,38 +1,26 @@
-using Microsoft.EntityFrameworkCore;
-using Veterinaria.Datos;
-using Veterinaria.Negocios;
-
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
-
-// Cadena de conexión
-var connectionString = builder.Configuration.GetConnectionString("ConexionSQL");
-
-// Registrar Contexto y Servicio
-builder.Services.AddDbContext<VeterinariaContext>(options =>
-    options.UseSqlServer(connectionString));
-
-builder.Services.AddScoped<MascotaService>();
+// Add services to the container.
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
-// Ruta predeterminada hacia Mascotas/Crear
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Mascotas}/{action=Crear}/{id?}");
+app.MapStaticAssets();
+app.MapRazorPages()
+   .WithStaticAssets();
 
 app.Run();
